@@ -1,3 +1,3 @@
-h1: Almaz MacRuby Client
+h1. Almaz MacRuby Client
 
 <img src='http://www.pozdena.org/snaps/77f2a518a41274e21329ce54dc230cde.png' />
