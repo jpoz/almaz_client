@@ -22,7 +22,6 @@
 		activeExecutable = 5CA4905B10D5C0FD002848BF /* Almaz */;
 		activeTarget = 8D1107260486CEB800E47090 /* Almaz */;
 		addToTargets = (
-			8D1107260486CEB800E47090 /* Almaz */,
 		);
 		codeSenseManager = 5CA4907A10D5C114002848BF /* Code sense */;
 		executables = (
@@ -111,8 +110,15 @@
 	5CA4907D10D5C1C3002848BF /* Controller.rb */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {775, 457}}";
-			sepNavSelRange = "{355, 0}";
-			sepNavVisRange = "{0, 480}";
+			sepNavSelRange = "{363, 0}";
+			sepNavVisRange = "{0, 735}";
+		};
+	};
+	5CA4909B10D5C6C6002848BF /* Record.rb */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {775, 457}}";
+			sepNavSelRange = "{190, 0}";
+			sepNavVisRange = "{0, 461}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Almaz */ = {
