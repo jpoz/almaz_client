@@ -7,7 +7,7 @@
 require 'Record'
 
 class Controller
-	attr_writer :dataTableView
+	attr_writer :dataTableView, :url_field, :username_field, :password_field
 	
 	def awakeFromNib
 		@data = []
@@ -15,6 +15,8 @@ class Controller
 	end
 	
 	def getData(sender)
+		puts "Setting up connection with #{@url_field.stringValue}"
+		Record.setup_class(@url_field.stringValue, @username_field.stringValue, @password_field.stringValue)
 		puts "Getting data"
 		@data = Record.get_records
 		@dataTableView.reloadData

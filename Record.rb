@@ -10,9 +10,11 @@ require 'httparty'
 class Record
 	include HTTParty
 	format :json
-	basic_auth 'jpoz', 'pass'
-	base_uri 'localhost:9393'
-
+	
+	def self.setup_class(url, username, password)
+		base_uri url
+		basic_auth username, password
+	end
 
 	def self.get_records
 		raw = get('/almaz')
