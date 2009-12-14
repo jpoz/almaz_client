@@ -19,12 +19,24 @@ class Record
 	def self.get_records
 		raw = get('/almaz')
 		raw.map do |r|
-			re = Record.new()
-			re.identifier = r
-			re
+			Record.new(r)
 		end
 	end
 	
 	attr_accessor :identifier, :information
+	
+	def initialize(identifier)
+		@identifier = identifier
+		@information = []
+	end
+	
+	def information
+		return @information unless @information.empty?
+		id_array = @identifier.split('::')
+		id = id_array.size > 2 ? id_array[2] : 'noid'
+		@information = self.class.get("/almaz/#{id}")
+		puts @information.inspect
+		@information
+	end
 end
 

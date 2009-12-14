@@ -7,11 +7,14 @@
 require 'Record'
 
 class Controller
-	attr_writer :dataTableView, :url_field, :username_field, :password_field
+	attr_writer :dataTableView, :infoTableView, :url_field, :username_field, :password_field
 	
 	def awakeFromNib
 		@data = []
+		@info = []
 		@dataTableView.dataSource = self
+		@dataTableView.delegate = self
+		@infoTableView.dataSource = self
 	end
 	
 	def getData(sender)
@@ -23,11 +26,27 @@ class Controller
 	end
 	
 	def numberOfRowsInTableView(view)
-		@data.size
+		if view == @dataTableView
+			@data.size
+		else
+			@info.size
+		end
 	end
 
 	def tableView(view, objectValueForTableColumn:column, row:index)
-		data = @data[index]
-		data.identifier
+		if view == @dataTableView
+			data = @data[index]
+			data.identifier
+		else
+			@info[index]
+		end
+	end
+	
+	def tableViewSelectionDidChange(notification)
+		puts "Selection changed #{notification.inspect}"
+		puts "#{@dataTableView.selectedRow}"
+		puts @data[@dataTableView.selectedRow].identifier
+		@info = @data[@dataTableView.selectedRow].information
+		@infoTableView.reloadData
 	end
 end
