@@ -88,6 +88,8 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = Almaz;
+		savedGlobals = {
+		};
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
@@ -105,6 +107,13 @@
 	5CA4907A10D5C114002848BF /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	5CA4907D10D5C1C3002848BF /* Controller.rb */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {775, 457}}";
+			sepNavSelRange = "{355, 0}";
+			sepNavVisRange = "{0, 480}";
+		};
 	};
 	8D1107260486CEB800E47090 /* Almaz */ = {
 		activeExec = 0;
